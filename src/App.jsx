@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Nav from './components/Nav'
+import Searchbar from './components/Searchbar'
 
 function App() {
 
@@ -39,7 +40,7 @@ function App() {
     <>
       <Nav />
       <div className="App">
-        <h1>Mi Pokedex con React</h1>
+        <Searchbar />
 
         <main className="container">
           {
