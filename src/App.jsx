@@ -1,35 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [pokemon, setPokemon] = useState([
+
+  ])
+
+  useEffect(() => {
+    const getPokemon = async () => {
+      const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0')
+      const pokemonList = await response.json()
+
+      const { results } = pokemonList
+
+      const newPokemon = results.map(async (eachPokemon) => {
+
+        const response = await fetch(eachPokemon.url)
+        const pokemonData = await response.json()
+
+        return {
+          id: pokemonData.id,
+          name: pokemonData.name,
+          image: pokemonData.sprites.other.dream_world.front_default
+        }
+
+      })
+
+      setPokemon(await Promise.all(newPokemon))
+
+    }
+
+    getPokemon()
+
+  }, [])
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more...
-      </p>
-    </>
+    <div className="App">
+      <h1>Mi Pokedex con React</h1>
+
+      <main className="container">
+      {
+          pokemon.map((eachPokemon, index) => (
+            <div key={index} className="pokemonCard">
+              <img src={eachPokemon.image} alt={eachPokemon.name} />
+              <span>{eachPokemon.id}</span>
+              <h3>{eachPokemon.name}</h3>
+            </div>
+          ))
+        }
+      </main>
+      <ul>
+        
+      </ul>
+    </div>
   )
+
 }
 
 export default App
