@@ -7,16 +7,32 @@
     text-align: center;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
 .searchbar {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem; 0;
+}
+
+.searchbar-form > fieldset {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .search-input {
-    flex: .3;
     padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 2rem;
