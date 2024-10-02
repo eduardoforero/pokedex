@@ -5,13 +5,13 @@ const Nav = () => {
     return (
         <nav>
             <Logo />
-            <div className="color-palette-switcher">
-                <DarkIcon />
-                <label>
-                    <input type="checkbox" className="color-palette-toggle" hidden />
-                    <span className="color-palette-slider"></span>
-                </label>
+            <div className="light-dark-switcher">
                 <LightIcon />
+                <label>
+                    <input type="checkbox" className="light-dark-toggle" hidden />
+                    <span className="light-dark-slider"></span>
+                </label>
+                <DarkIcon />
             </div>
         </nav>
     );

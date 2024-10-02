@@ -12,7 +12,7 @@ nav > svg {
     height: 4rem;
 }
 
-.color-palette-switcher {
+.light-dark-switcher {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -20,12 +20,12 @@ nav > svg {
     gap: 0.2rem;
 }
 
-.color-palette-switcher > svg {
+.light-dark-switcher > svg {
     width: auto;
     height: 1.5rem;
 }
 
-.color-palette-switcher > label {
+.light-dark-switcher > label {
     background-color: #ddd;
     width: 4.1rem;
     height: auto;
@@ -34,7 +34,7 @@ nav > svg {
     cursor: pointer;
 }
 
-.color-palette-switcher .color-palette-slider {
+.light-dark-switcher .light-dark-slider {
     display: inline-block;
     width: 1.5rem;
     height: 1.5rem;
@@ -43,6 +43,6 @@ nav > svg {
     transition: transform 0.3s ease;
 }
 
-.color-palette-switcher .color-palette-toggle:checked + .color-palette-slider {
+.light-dark-switcher .light-dark-toggle:checked + .light-dark-slider {
     transform: translateX(2rem);    
 }
