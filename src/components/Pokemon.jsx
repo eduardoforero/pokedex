@@ -1,39 +1,9 @@
-import { useState, useEffect } from 'react'
+import usePokemon from '../hooks/usePokemon';
 import './Pokemon.css'
 
 function Pokemon() {
 
-    const [pokemon, setPokemon] = useState([
-
-    ])
-
-    useEffect(() => {
-        const getPokemon = async () => {
-            const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=30&offset=0')
-            const pokemonList = await response.json()
-
-            const { results } = pokemonList
-
-            const newPokemon = results.map(async (eachPokemon) => {
-
-                const response = await fetch(eachPokemon.url)
-                const pokemonData = await response.json()
-
-                return {
-                    id: pokemonData.id,
-                    name: pokemonData.name,
-                    image: pokemonData.sprites.other.dream_world.front_default
-                }
-
-            })
-
-            setPokemon(await Promise.all(newPokemon))
-
-        }
-
-        getPokemon()
-
-    }, [])
+    const { pokemon, fetchMorePokemon } = usePokemon();
 
     return (
         <section className="pokemon-card-container">
@@ -42,6 +12,8 @@ function Pokemon() {
                     <PokemonCard key={index} {...eachPokemon} index={index} />
                 ))
             }
+
+            <button className="load-more-button" onClick={fetchMorePokemon}>Load More Pokemon</button>
         </section>
     );
 }
