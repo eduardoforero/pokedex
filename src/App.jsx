@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Nav from './components/Nav'
 
 function App() {
 
@@ -35,24 +36,24 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <h1>Mi Pokedex con React</h1>
+    <>
+      <Nav />
+      <div className="App">
+        <h1>Mi Pokedex con React</h1>
 
-      <main className="container">
-      {
-          pokemon.map((eachPokemon, index) => (
-            <div key={index} className="pokemonCard">
-              <img src={eachPokemon.image} alt={eachPokemon.name} />
-              <span>{eachPokemon.id}</span>
-              <h3>{eachPokemon.name}</h3>
-            </div>
-          ))
-        }
-      </main>
-      <ul>
-        
-      </ul>
-    </div>
+        <main className="container">
+          {
+            pokemon.map((eachPokemon, index) => (
+              <div key={index} className="pokemonCard">
+                <img src={eachPokemon.image} alt={eachPokemon.name} />
+                <span>{eachPokemon.id}</span>
+                <h3>{eachPokemon.name}</h3>
+              </div>
+            ))
+          }
+        </main>
+      </div>
+    </>
   )
 
 }
