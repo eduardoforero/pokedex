@@ -8,3 +8,7 @@
     box-sizing: border-box;
     border: none;
 }
+
+main.container {
+    padding: 2rem 0;
+}

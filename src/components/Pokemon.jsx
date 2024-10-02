@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import './Pokemon.css'
 
 function Pokemon() {
 
@@ -8,7 +9,7 @@ function Pokemon() {
 
     useEffect(() => {
         const getPokemon = async () => {
-            const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0')
+            const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=30&offset=0')
             const pokemonList = await response.json()
 
             const { results } = pokemonList
@@ -35,18 +36,28 @@ function Pokemon() {
     }, [])
 
     return (
-        <section>
+        <section className="pokemon-card-container">
             {
                 pokemon.map((eachPokemon, index) => (
-                    <div key={index} className="pokemonCard">
-                        <img src={eachPokemon.image} alt={eachPokemon.name} />
-                        <span>{eachPokemon.id}</span>
-                        <h3>{eachPokemon.name}</h3>
-                    </div>
+                    <PokemonCard key={index} {...eachPokemon} index={index} />
                 ))
             }
         </section>
     );
+}
+
+function PokemonCard({ id, name, image, index }) {
+    return (
+        <div key={index} className="pokemon-card">
+
+            <img src={image} alt={name} className="pokemon-card-image" />
+            <div className="pokemon-card-header">
+                <span>#{id}</span>
+                <h3>{name}</h3>
+            </div>
+
+        </div>
+    )
 }
 
 export default Pokemon;
