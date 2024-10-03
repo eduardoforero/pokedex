@@ -1,20 +1,34 @@
 import usePokemon from '../hooks/usePokemon';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import Loading from './Loading';
 import './Pokemon.css'
 
 function Pokemon() {
 
-    const { pokemon, fetchMorePokemon } = usePokemon();
+    const { pokemon, fetchMorePokemon, seeMore } = usePokemon();
 
     return (
-        <section className="pokemon-card-container">
+        <InfiniteScroll
+            dataLength={pokemon.length}
+            next={fetchMorePokemon}
+            hasMore={seeMore}
+            loader={<Loading />}
+            endMessage={
+                <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: '#3088f021' }}>
+                    <p>
+                        <br /><b>That's all, there are no more Pokémon to show</b><br /><br />
+                    </p>
+                </div>
+            }
+        >
+            <main className="pokemon-cards-container">
             {
                 pokemon.map((eachPokemon, index) => (
                     <PokemonCard key={index} {...eachPokemon} index={index} />
                 ))
             }
-
-            <button className="load-more-button" onClick={fetchMorePokemon}>Load More Pokemon</button>
-        </section>
+            </main>
+        </InfiniteScroll>
     );
 }
 
