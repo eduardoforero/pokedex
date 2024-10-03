@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-const URL_DEFAULT = 'https://pokeapi.co/api/v2/pokemon?limit=100&offset=0'
+const URL_DEFAULT = 'https://pokeapi.co/api/v2/pokemon?limit=50&offset=0'
 
 function usePokemon() {
 
