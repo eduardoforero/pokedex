@@ -18,11 +18,18 @@ function usePokemon() {
 
                 const response = await fetch(eachPokemon.url)
                 const pokemonData = await response.json()
+
+                const abilities = pokemonData.abilities.map(a => a.ability.name)
+                const stats = pokemonData.stats.map(s => { return { name: s.stat.name, base: s.base_stat }})
+                const types = pokemonData.types.map(t => t.type.name)
     
                 return {
                     id: pokemonData.id,
                     name: pokemonData.name,
-                    image: pokemonData.sprites.other.dream_world.front_default || pokemonData.sprites.other.home.front_default || pokemonData.sprites.other['official-artwork'].front_default
+                    image: pokemonData.sprites.other.dream_world.front_default || pokemonData.sprites.other.home.front_default || pokemonData.sprites.other['official-artwork'].front_default,
+                    abilities,
+                    stats,
+                    types
                 }
             })
         )

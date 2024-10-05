@@ -30,12 +30,14 @@
     transform: translateY(5px);
 }
 
+.pokemon-card-image-container {
+    max-width: 160px;
+    z-index: 1;
+}
+
 .pokemon-card-image {
     width: 100%;
     height: auto;
-    max-height: 180px;
-    max-width: 270px;
-    z-index: 1;
     margin-top: -30px;
 }
 

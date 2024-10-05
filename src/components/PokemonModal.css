@@ -1,0 +1,35 @@
+.modal-container {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    place-items: center;
+    transition: all 0.3s ease;
+    z-index: 2;
+
+}
+
+.modal-body {
+    position: absolute;
+    display: flex;
+    width: 50%;
+    min-width: 450px;
+    border-radius: 20px;
+    padding: 1rem;
+    background-color: #ffffff;
+
+}
+
+.imagen-container {
+    display: grid;
+    place-items: center;
+
+}
+
+.imagen-detalle {
+    width: 100%;
+    height: auto;
+
+}
