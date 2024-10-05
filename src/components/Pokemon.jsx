@@ -4,18 +4,35 @@ import usePokemon from '../hooks/usePokemon';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loading from './Loading';
 import PokemonModal from './PokemonModal';
+import Searchbar from './Searchbar'
 
 function Pokemon() {
 
-    const { pokemon, fetchMorePokemon, seeMore } = usePokemon();
-
+    const { pokemon, fetchMorePokemon, seeMore, searchingPokemon } = usePokemon();
     const [mostrar, setMostrar] = useState({ mostrar: false, pokemon: {} })
+    const [search, setSearch] = useState('')
+
+
     const verPokemon = (pokemon) => setMostrar({ mostrar: true, pokemon })
-    const noVerPokemon = () => setMostrar({ mostrar: false, pokemon: {} })
+    const noVerPokemon = () => {
+        setMostrar({ mostrar: false, pokemon: {} })
+        setSearch('')
+    }
+
+    const searchPokemon = async (e) => {
+        e.preventDefault();
+        if (search.trim() === '') return;
+
+        const trimmedSearch = search.replace(/\s+/g, '');
+        const pokemon = await searchingPokemon(trimmedSearch);
+
+        setMostrar({ mostrar: true, pokemon })
+    }
 
     return (
         <>
             <PokemonModal {...mostrar} cerrar={noVerPokemon} />
+            <Searchbar search={search} setSearch={setSearch} searchPokemon={searchPokemon} />
             <InfiniteScroll
                 dataLength={pokemon.length}
                 next={fetchMorePokemon}

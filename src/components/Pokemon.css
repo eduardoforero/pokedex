@@ -20,6 +20,7 @@
     background: linear-gradient(180deg, #f05868, #fd6978);
     border-radius: 20px 20px 22px 22px;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .pokemon-card:hover {

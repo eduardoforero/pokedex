@@ -1,16 +1,16 @@
 import { SearchIcon } from './Icons';
 import './Searchbar.css';
 
-function Searchbar() {
+function Searchbar({ search, setSearch, searchPokemon }) {
     return (
         <>
         <section className="searchbar">
         <h1 className="title">Search for your favorite Pokémon</h1>
-            <form className="searchbar-form">
+            <form className="searchbar-form" onSubmit={searchPokemon}>
                 <fieldset>
                     <legend className="visually-hidden">Search Pokémon</legend>
                     <label htmlFor="search-input" className="visually-hidden">Search for a Pokémon</label>
-                    <input type="text" id="search-input" className="search-input" placeholder="Search for a Pokémon" />
+                    <input type="text" id="search-input" className="search-input" placeholder="Search for a Pokémon" value={search} onChange={(e) => setSearch(e.target.value)} />
                     <button type="submit" className="search-button">
                         <SearchIcon />
                     </button>
