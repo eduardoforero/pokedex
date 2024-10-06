@@ -14,7 +14,7 @@ function usePokemon() {
         const pokemonData = await response.json()
 
         const abilities = pokemonData.abilities.map(a => a.ability.name)
-        const stats = pokemonData.stats.map(s => { return { name: s.stat.name, base: s.base_stat }})
+        const stats = pokemonData.stats.map(s => { return { name: s.stat.name, base: s.base_stat } })
         const types = pokemonData.types.map(t => t.type.name)
 
         return {

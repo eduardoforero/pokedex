@@ -39,9 +39,10 @@ function Pokemon() {
                 hasMore={seeMore}
                 loader={<Loading />}
                 endMessage={
-                    <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: '#3088f021' }}>
+                    <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: '#3088f021', textAlign: 'center' }}>
                         <p>
                             <br /><b>That's all, there are no more Pokémon to show</b><br /><br />
+                            <small>Pokémon and Pokémon character names are trademarks of Nintendo®</small><br /><br />
                         </p>
                     </div>
                 }

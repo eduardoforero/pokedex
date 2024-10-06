@@ -27,7 +27,7 @@
     place-items: center;
 }
 
-.imagen-detalle {
+.image-details {
     width: 100%;
     height: auto;
     max-height: 390px;
@@ -205,18 +205,22 @@
         grid-template-columns: 1fr;
         min-width: auto;
     }
+
     .modal-left-data {
         min-height: auto;
         row-gap: 10px;
         padding: 1rem 0;
         align-items: center;
     }
+
     .modal-left-data img {
         max-width: 270px;
     }
+
     .modal-right-data {
         row-gap: 15px;
     }
+
     .pokemon-abilities {
         row-gap: 12px;
     }

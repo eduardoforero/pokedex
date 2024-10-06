@@ -8,7 +8,7 @@ function PokemonModal({ mostrar, pokemon, cerrar }) {
         <div className="modal-left-data">
 
           <figure>
-            <img src={pokemon.image} alt={pokemon.name} className="imagen-detalle" />
+            <img src={pokemon.image} alt={pokemon.name} className="image-details" />
           </figure>
           <section className="pokemon-type-section">
             {pokemon.types?.map((type, index) => <span key={index} className={`${type}`}>{type}</span>)}
