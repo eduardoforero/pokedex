@@ -68,3 +68,13 @@
     height: 1.5rem;
     fill: var(--theme-medium-color1);
 }
+
+@media (max-width: 767px) {
+    .search-input {
+        min-width: 290px;
+        padding: 0.6rem 0.2rem 0.6rem 0.4rem;
+    }
+    .search-button {
+        padding: 0.3rem 0.4rem;
+    }
+}

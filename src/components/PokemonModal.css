@@ -192,3 +192,32 @@
     background: linear-gradient(180deg, #4592c4 50%, #4592c4 50%);
     background-color: #4592c4;
 }
+
+@media (max-width: 1024px) {
+    .modal-body {
+        width: 75%;
+    }
+}
+
+@media (max-width: 767px) {
+    .modal-body {
+        width: 85%;
+        grid-template-columns: 1fr;
+        min-width: auto;
+    }
+    .modal-left-data {
+        min-height: auto;
+        row-gap: 10px;
+        padding: 1rem 0;
+        align-items: center;
+    }
+    .modal-left-data img {
+        max-width: 270px;
+    }
+    .modal-right-data {
+        row-gap: 15px;
+    }
+    .pokemon-abilities {
+        row-gap: 12px;
+    }
+}
