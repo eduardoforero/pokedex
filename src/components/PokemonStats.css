@@ -17,7 +17,7 @@
     justify-content: flex-start;
     border-radius: 20px;
     padding: 0.1rem 0.2rem;
-    background-color: #f2f2f2;
+    background-color: var(--theme-medium-color1);
   }
   
   .pokemon-stat .bar {

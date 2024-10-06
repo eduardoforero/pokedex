@@ -1,5 +1,5 @@
 nav {
-    background-color: #f0d048;
+    background-color: var(--theme-primary-color);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -26,7 +26,7 @@ nav > svg {
 }
 
 .light-dark-switcher > label {
-    background-color: #ddd;
+    background-color: var(--theme-text-color);
     width: 4.1rem;
     height: auto;
     border-radius: 1rem;
@@ -39,7 +39,7 @@ nav > svg {
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 1rem;
-    background-color: #fff;
+    background-color: var(--theme-back-color);
     transition: transform 0.3s ease;
 }
 

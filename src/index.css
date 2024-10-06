@@ -1,5 +1,18 @@
 :root {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+
+    --theme-back-color: #ffffff;
+    --theme-text-color: #1a202c;
+    --theme-medium-color1: #f2f2f2;
+    --theme-medium-color2: #ececec;
+    --theme-medium-color3: #cbd2d9;
+
+    --theme-primary-color: #f0d048;
+    --theme-secondary-color: #3088f0;
+    --theme-third-color: #f05868;
+
+    --dark-global-color: #353c49;
 }
 
 * {
@@ -7,6 +20,21 @@
     padding: 0;
     box-sizing: border-box;
     border: none;
+}
+
+body {
+    background-color: var(--theme-back-color);
+    color: var(--theme-text-color);
+}
+
+[data-theme="dark"] {
+    --theme-back-color: #1a202c;
+    --theme-text-color: #ffffff;
+    --theme-medium-color1: #353c49;
+    --theme-medium-color3: #a5a8ad;
+
+    --theme-primary-color: #3088f0;
+    --theme-third-color: #9a5796;
 }
 
 main.container {

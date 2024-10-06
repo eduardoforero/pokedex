@@ -15,11 +15,11 @@
     align-content: center;
     align-items: center;
     justify-content: flex-end;
-    background: #f05868;
-    background: -webkit-linear-gradient(180deg, #f05868, #fd6978);
-    background: linear-gradient(180deg, #f05868, #fd6978);
+    background: var(--theme-third-color);
+    background: -webkit-linear-gradient(180deg, var(--theme-third-color) , #fd6978);
+    background: linear-gradient(180deg, var(--theme-third-color) , #fd6978);
     border-radius: 20px 20px 22px 22px;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
     cursor: pointer;
 }
 
@@ -47,7 +47,7 @@
     flex-direction: column;
     align-items: center;
     row-gap: 0.5rem;
-    background: #f2f2f2;
+    background: var(--theme-medium-color1);
     padding: 3rem 1rem 2rem 1rem;
     border-radius: 20px;
     z-index: 0;
@@ -58,7 +58,7 @@
 }
 
 .pokemon-card-header>span {
-    background: #ffffff;
+    background: var(--theme-back-color);
     padding: 0.2rem 0.5rem;
     border-radius: 5px;
     color: gray;
