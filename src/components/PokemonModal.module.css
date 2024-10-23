@@ -1,4 +1,4 @@
-.modal-container {
+.modalContainer {
     position: fixed;
     background: rgba(0, 0, 0, 0.5);
     top: 0;
@@ -10,7 +10,7 @@
     z-index: 2;
 }
 
-.modal-body {
+.modalBody {
     position: absolute;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -22,28 +22,28 @@
     box-shadow: 0px 0px 16px rgba(48, 136, 240, 0.4);
 }
 
-.imagen-container {
+.imagenContainer {
     display: grid;
     place-items: center;
 }
 
-.image-details {
+.imageDetails {
     width: 100%;
     height: auto;
     max-height: 390px;
 }
 
-.modal-left-data,
-.pokemon-type-section {
+.modalLeftData,
+.pokemonTypeSection {
     display: flex;
 }
 
-.pokemon-type-section {
+.pokemonTypeSection {
     justify-content: center;
     column-gap: 10px;
 }
 
-.pokemon-type-section span {
+.pokemonTypeSection span {
     padding: 0.3rem 0.8rem;
     color: var(--theme-back-color);
     font-weight: bolder;
@@ -51,39 +51,39 @@
     border-radius: 1rem;
 }
 
-.modal-left-data {
+.modalLeftData {
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem;
     min-height: 490px;
 }
 
-.modal-right-data {
+.modalRightData {
     display: grid;
 }
 
-.pokemon-name>h4 {
+.pokemonName>h4 {
     font-size: 1.8rem;
     text-transform: capitalize;
 }
 
-.pokemon-name>span,
-.modal-right-data h5 {
+.pokemonName>span,
+.modalRightData h5 {
     font-size: 1.2rem;
     text-transform: capitalize;
 }
 
-.pokemon-abilities {
+.pokemonAbilities {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 8px;
 }
 
-.pokemon-abilities h5 {
+.pokemonAbilities h5 {
     grid-column: 1 / -1;
 }
 
-.pokemon-ability {
+.pokemonAbility {
     border: 1px solid var(--theme-medium-color3);
     border-radius: 1rem;
     padding: 0.1rem 0.2rem;
@@ -93,11 +93,11 @@
     background-color: var(--theme-medium-color1);
 }
 
-.stats-container {
+.statsContainer {
     width: 100%;
 }
 
-.pokemon-stats {
+.pokemonStats {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -194,34 +194,34 @@
 }
 
 @media (max-width: 1024px) {
-    .modal-body {
+    .modalBody {
         width: 75%;
     }
 }
 
 @media (max-width: 767px) {
-    .modal-body {
+    .modalBody {
         width: 85%;
         grid-template-columns: 1fr;
         min-width: auto;
     }
 
-    .modal-left-data {
+    .modalLeftData {
         min-height: auto;
         row-gap: 10px;
         padding: 1rem 0;
         align-items: center;
     }
 
-    .modal-left-data img {
+    .modalLeftData img {
         max-width: 270px;
     }
 
-    .modal-right-data {
+    .modalRightData {
         row-gap: 15px;
     }
 
-    .pokemon-abilities {
+    .pokemonAbilities {
         row-gap: 12px;
     }
 }

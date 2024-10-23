@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import './Pokemon.css'
 import usePokemon from '../hooks/usePokemon';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loading from './Loading';
 import PokemonModal from './PokemonModal';
-import Searchbar from './Searchbar'
+import Searchbar from './Searchbar';
+import styles from './Pokemon.module.css'
+
 
 function Pokemon() {
 
@@ -47,7 +48,7 @@ function Pokemon() {
                     </div>
                 }
             >
-                <main className="pokemon-cards-container">
+                <main className={styles.pokemonCardsContainer}>
                     {pokemon.map((eachPokemon) => <PokemonCard {...eachPokemon} key={eachPokemon.id} verPokemon={() => verPokemon(eachPokemon)} />)}
                 </main>
             </InfiniteScroll>
@@ -57,12 +58,12 @@ function Pokemon() {
 
 function PokemonCard({ id, name, image, verPokemon }) {
     return (
-        <div className="pokemon-card" onClick={verPokemon}>
-            <div className="pokemon-card-image-container">
-                <img src={image} alt={name} className="pokemon-card-image" />
+        <div className={styles.pokemonCard} onClick={verPokemon}>
+            <div className={styles.pokemonCardImageContainer}>
+                <img src={image} alt={name} className={styles.pokemonCardImage} />
             </div>
 
-            <div className="pokemon-card-header">
+            <div className={styles.pokemonCardHeader}>
                 <span>#{id}</span>
                 <h3>{name}</h3>
             </div>

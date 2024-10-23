@@ -1,17 +1,17 @@
 import { SearchIcon } from './Icons';
-import './Searchbar.css';
+import styles from './Searchbar.module.css';
 
 function Searchbar({ search, setSearch, searchPokemon }) {
     return (
         <>
-            <section className="searchbar">
-                <h1 className="title">Find your favorite Pokémon <br />there are more than 1,000 of them</h1>
-                <form className="searchbar-form" onSubmit={searchPokemon}>
+            <section className={styles.searchbar}>
+                <h1 className={styles.title}>Find your favorite Pokémon <br />there are more than 1,000 of them</h1>
+                <form className={styles.searchBarForm} onSubmit={searchPokemon}>
                     <fieldset>
-                        <legend className="visually-hidden">Search Pokémon</legend>
-                        <label htmlFor="search-input" className="visually-hidden">Search for a Pokémon</label>
-                        <input type="text" id="search-input" className="search-input" placeholder="Search for a Pokémon by its ID or Name" value={search} onChange={(e) => setSearch(e.target.value)} />
-                        <button type="submit" className="search-button">
+                        <legend className={styles.visuallyHidden}>Search Pokémon</legend>
+                        <label htmlFor={styles.searchInput} className={styles.visuallyHidden}>Search for a Pokémon</label>
+                        <input type="text" id={styles.searchInput} className={styles.searchInput} placeholder="Search for a Pokémon by its ID or Name" value={search} onChange={(e) => setSearch(e.target.value)} />
+                        <button type="submit" className={styles.searchButton}>
                             <SearchIcon />
                         </button>
                     </fieldset>

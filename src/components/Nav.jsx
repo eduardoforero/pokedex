@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Logo, DarkIcon, LightIcon } from './Icons';
-import './Nav.css';
+import styles from './Nav.module.css';
 
 const Nav = () => {
 
@@ -15,11 +15,11 @@ const Nav = () => {
     return (
         <nav>
             <Logo />
-            <div className="light-dark-switcher">
+            <div className={styles.lightDarkSwitcher}>
                 <LightIcon />
                 <label>
-                    <input type="checkbox" className="light-dark-toggle" onChange={handleTheme} hidden />
-                    <span className="light-dark-slider"></span>
+                    <input type="checkbox" className={styles.lightDarkToggle} onChange={handleTheme} hidden />
+                    <span className={styles.lightDarkSlider}></span>
                 </label>
                 <DarkIcon />
             </div>

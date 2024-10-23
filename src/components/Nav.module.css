@@ -12,7 +12,7 @@ nav>svg {
     height: 4rem;
 }
 
-.light-dark-switcher {
+.lightDarkSwitcher {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -20,12 +20,12 @@ nav>svg {
     gap: 0.2rem;
 }
 
-.light-dark-switcher>svg {
+.lightDarkSwitcher>svg {
     width: auto;
     height: 1.5rem;
 }
 
-.light-dark-switcher>label {
+.lightDarkSwitcher>label {
     background-color: var(--theme-text-color);
     width: 4.1rem;
     height: auto;
@@ -34,7 +34,7 @@ nav>svg {
     cursor: pointer;
 }
 
-.light-dark-switcher .light-dark-slider {
+.lightDarkSwitcher .lightDarkSlider {
     display: inline-block;
     width: 1.5rem;
     height: 1.5rem;
@@ -43,6 +43,6 @@ nav>svg {
     transition: transform 0.3s ease;
 }
 
-.light-dark-switcher .light-dark-toggle:checked+.light-dark-slider {
+.lightDarkSwitcher .lightDarkToggle:checked+.lightDarkSlider {
     transform: translateX(2rem);
 }
